@@ -19,7 +19,7 @@
 ### 1. The TCP Close Race Condition (Mac ↔ Win)
 During development, a race condition was identified where the Sender (macOS) would close the TCP socket before the Receiver (Windows) could flush the final bytes from the network buffer to the disk. 
 
-**The Solution:** Implemented a **Synchronous Handshake**. The Sender performs a TCP Half-Close and waits for a 1-byte ACK from the Receiver's disk-write routine before terminating the process.
+**The Solution:** Implemented a **Synchronous Handshake**. The Sender performs a buffer flush and waits for a 1-byte ACK from the Receiver's disk-write routine before terminating the process.
 
 
 
@@ -42,7 +42,7 @@ To maintain a real-time progress bar while encrypting data on-the-fly:
 ### Build from Source
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/gophertunnel](https://github.com/yourusername/gophertunnel)
+git clone https://github.com/prajwalx/gophertunnel
 cd gophertunnel
 
 # Install dependencies
@@ -74,7 +74,6 @@ go build -o tunnel ./cmd/tunnel
 │   ├── discovery/        # mDNS Server/Client & Peer Validation
 │   ├── security/         # AES-CTR Encryption logic
 │   └── transfer/         # TCP Protocol, Handshaking, and Streaming
-├── Makefile              # Cross-platform build automation
 └── go.mod                # Dependency management
 ```
 ---
