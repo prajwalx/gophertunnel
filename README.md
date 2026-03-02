@@ -2,6 +2,14 @@
 
 **GopherTunnel** is a high-performance, zero-config P2P file transfer CLI tool built in Go. It enables instant, encrypted file sharing between machines on a local network without the need for cloud intermediaries, third-party servers, or manual IP entry.
 
+
+<h2 align="center">📺 Project Demo</h2>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=SwJx8jYthKc">
+    <img src="https://img.youtube.com/vi/SwJx8jYthKc/maxresdefault.jpg" alt="P2P CLI Demo" width="600">
+  </a>
+</p>
+
 ---
 
 ## ✨ Key Features
